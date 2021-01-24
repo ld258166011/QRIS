@@ -19,14 +19,14 @@ except:
 MODEL_PATH = pkg_resources.resource_filename('qris', 'models/')
 def_dic_en = os.path.join(MODEL_PATH, 'queries_AOL.csv')
 def_dic_zh = os.path.join(MODEL_PATH, 'queries_THU.csv')
-def_bigram = os.path.join(MODEL_PATH, 'bigrams.csv')
+def_bigrams = os.path.join(MODEL_PATH, 'bigrams.csv')
 
 
 class Queries:
     '''
     Queries of prediction target set.
     '''
-    def __init__(self, website, chinese=False, dic=None, bigram=None, verbose=False):
+    def __init__(self, website, chinese=False, dic=None, bigrams=None, verbose=False):
         if type(website) is str:
             self.website = Website(website)
         else:
@@ -40,10 +40,10 @@ class Queries:
             else:
                 self.queries = self._load_queries(def_dic_en)
 
-        if bigram is not None:
-            self.bigrams = self._load_bigrams(bigram)
+        if bigrams is not None:
+            self.bigrams = self._load_bigrams(bigrams)
         else:
-            self.bigrams = self._load_bigrams(def_bigram)
+            self.bigrams = self._load_bigrams(def_bigrams)
 
         self.chinese = chinese
 
