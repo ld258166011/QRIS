@@ -50,7 +50,7 @@ def QRIS(pcap, website, chinese, queryset, bigrams, trident, topk, verbose):
     querylist = []
     for group in candidates:
         if len(group) == 0:
-            pass
+            continue
         ranked = group.sort_values('rank')['query']
         if len(ranked) < topk:
             querylist += ranked.tolist()
