@@ -20,7 +20,7 @@ def main():
     parser.add_argument('--topk', type=int, metavar='K', default=10,
                         help='list the top K inferred queries.')
     parser.add_argument('--verbose', dest='verbose', action='store_true',
-                        help='print inference process.')
+                        help='show inference details.')
     
     if len(sys.argv) == 1:
         parser.print_help()
