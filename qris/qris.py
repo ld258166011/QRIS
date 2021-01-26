@@ -18,13 +18,17 @@ def QRIS(pcap, website, chinese, queryset, bigrams, trident, topk, verbose):
     if verbose:
         print('Server IP:', packets.packets.loc[0, 'dst'])
 
+    # Correlate keystroke packets with DFA states
+    keystrokes = packets.correlate_state(chinese, trident)
+    if verbose:
+        print('Keystrokes:\n', keystrokes)
+    
     # Load query set and metadata
     queries = Queries(packets.website, chinese, queryset, bigrams, verbose)
     if verbose:
-        print('Query number:', len(queries.queries))
+        print('Number of queries:', len(queries.queries))
 
     # Filter by query length (keystroke number)
-    keystrokes = packets.correlate_state(chinese, trident)
     candidates = queries.filter_by_length(keystrokes)
     if verbose:
         print('Filtered by length:', [len(x) for x in candidates])
@@ -47,6 +51,7 @@ def QRIS(pcap, website, chinese, queryset, bigrams, trident, topk, verbose):
     if verbose:
         print('Ranked by rhythm:\n', [x.sort_values('rank') if len(x) > 0 else x for x in candidates])
 
+    # Return inferred queries
     querylist = []
     for group in candidates:
         if len(group) == 0:
