@@ -66,7 +66,7 @@ qris [xx].pcap
 
 ## Examples
 
-Some traffic samples can be found in `samples` directory. More samples can be downloaded from the [ISTD](##-related-repositories) traffic dataset.
+Some traffic samples can be found in `samples` directory. More samples can be downloaded from the [ISTD](#related-repositories) traffic dataset.
 
 ```
 qris "apple bee restaurant.pcap" --website bing
