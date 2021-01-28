@@ -28,7 +28,7 @@ By default, the [AOL search dataset](https://jeffhuang.com/search_query_logs.htm
 
 2. (Optional) Download the preloaded metadata for the AOL and THUOCL query sets. Unzip it into the QRIS python installation directory.
 
-* [metadata](https://mega.nz/file/9cxgGLiZ#-IMdSSrYKPPqt7QQD4qUbtZwoMMPxQ9OH3DVOuJZtC0) (312.05 MB, SHA1: F72D2C22E38BCC0BFBBDA94DDD0697E2B9745E05)
+	* [metadata](https://mega.nz/file/9cxgGLiZ#-IMdSSrYKPPqt7QQD4qUbtZwoMMPxQ9OH3DVOuJZtC0) (312.05 MB, SHA1: F72D2C22E38BCC0BFBBDA94DDD0697E2B9745E05)
 
 
 ## Usage
@@ -68,7 +68,7 @@ Use the following command to run QRIS with default optional arguments:
 
 ## Examples
 
-Some traffic samples can be found in `samples` directory. More samples can be downloaded from the [ISTD](#related-repositories) traffic dataset.
+Some traffic samples can be found in `samples` directory. More samples are available from the [ISTD](#related-repositories) traffic dataset.
 
 ```
 > qris "apple bee restaurant.pcap" --website bing
@@ -100,6 +100,6 @@ Detected website: tmall
 
 ## Related repositories
 
-* [QAIS](https://github.com/ld258166011/QAIS): the data collection tool that captures network traffic while a query is typed into an incremental search website.
+* [QAIS](https://github.com/ld258166011/QAIS): the data collection tool that captures network traffic while an English or Chinese query is typed into an incremental search website.
 
 * [ISTD](https://github.com/ld258166011/ISTD): the traffic dataset that contains 32.4k samples of English and Chinese queries captured on 9 incremental search websites.
