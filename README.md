@@ -13,6 +13,8 @@ QRIS consists of three stages applied in a pipeline architecture:
 2. **Ambiguity reduction** utilizes query size distinguishability to reduce the scale of the query set.
 3. **Query inference** leverages user's typing rhythm to infer queries from the filtered query set.
 
+Currently support English and Chinese queries. Supported websites include Google, Tmall, Facebook, Baidu, Yahoo, Wikipedia, Csdn, Twitch, Bing.
+
 By default, the [AOL search dataset](https://jeffhuang.com/search_query_logs.html) is used as English query set, and the [THU Open Chinese Lexicon](http://thuocl.thunlp.org/) (THUOCL) is used as Chinese query set. The default keystroke timing model is trained on the [136M keystroke dataset](https://userinterfaces.aalto.fi/136Mkeystrokes/).
 
 
@@ -20,8 +22,8 @@ By default, the [AOL search dataset](https://jeffhuang.com/search_query_logs.htm
 
 1. Use pip with Python 3.x to install the QRIS package:
 
-```sh
-pip install https://github.com/ld258166011/QRIS/archive/main.zip
+```
+> pip install https://github.com/ld258166011/QRIS/archive/main.zip
 ```
 
 2. (Optional) Download the preloaded metadata for the AOL and THUOCL query sets. Unzip it into the QRIS python installation directory.
@@ -59,8 +61,8 @@ optional arguments:
 
 Use the following command to run QRIS with default optional arguments:
 
-```sh
-qris [xx].pcap
+```
+> qris [xx].pcap
 ```
 
 
@@ -69,7 +71,7 @@ qris [xx].pcap
 Some traffic samples can be found in `samples` directory. More samples can be downloaded from the [ISTD](#related-repositories) traffic dataset.
 
 ```
-qris "apple bee restaurant.pcap" --website bing
+> qris "apple bee restaurant.pcap" --website bing
 laser eye correction
 bound and determined
 south par accounting
@@ -81,7 +83,7 @@ cures for depression
 funds for relocation
 inner bay restaurant
 
-qris 左氧氟沙星片.pcap --chinese
+> qris 左氧氟沙星片.pcap --chinese
 Detected website: tmall
 北京地坛公园
 北京日坛公园
