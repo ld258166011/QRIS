@@ -5,6 +5,7 @@ except:
     from .DFA import *
 
 SITE_FEATURES = {
+#    Website                Server Name           V    UH     SC     ST     AC      CT   CB
     'google':    {'base': ['www.google.com',      2,   False, True,  False, True,  'cp', 0,  0, range(0)], 'ss': range(173, 176), 'gs': True},
     'tmall':     {'base': ['suggest.taobao.com',  2,   False, True,  True,  True,  '',   10, 2, range(1, 4)]},
     'facebook':  {'base': ['www.facebook.com',    1.1, False, True,  False, False, '',   1,  1, range(5, 12)], 'cf': 2, 'fs': True},
