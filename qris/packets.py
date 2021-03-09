@@ -26,7 +26,7 @@ class Packets:
         tuples = self._filter_conv(pcap)
         self.packets = self._load_pcap(pcap, tuples)
 		
-		####################################################
+        ####################################################
         # Mitigation: Padding (require CB > 1)
         # for i, _ in self.packets.iterrows():
         #     # Increase 1 byte with probability 0.5
