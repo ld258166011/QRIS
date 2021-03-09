@@ -9,6 +9,8 @@ try:
 except:
     from .websites import Website, SITE_FEATURES
 
+import random
+random.seed()
 
 class Packets:
     '''
@@ -23,6 +25,35 @@ class Packets:
 
         tuples = self._filter_conv(pcap)
         self.packets = self._load_pcap(pcap, tuples)
+		
+		####################################################
+        # Mitigation: Padding (require CB > 1)
+        # for i, _ in self.packets.iterrows():
+        #     # Increase 1 byte with probability 0.5
+        #     if random.random() < 0.5:
+        #         self.packets.loc[i, 'size'] += 1
+        ####################################################
+        # Mitigation: Dummy traffic
+        # packets = self.packets.copy()
+        # _packets = pd.DataFrame(columns = packets.columns)
+        # for _, row in self.packets.iterrows():
+        #     _packets = _packets.append(row)
+        #     # Duplicate 10% packets (+50ms)
+        #     if random.random() < 0.1:
+        #         _packets = _packets.append(row)
+        #         _packets.iloc[-1, 0] += 50
+        # _packets = _packets.sort_values('time')
+        # self.packets = _packets.reset_index(drop=True)
+        ####################################################
+        # Mitigation: Network noise
+        # packets = self.packets.copy()
+        # for i, _ in self.packets.iterrows():
+        #     # Laplace deviation with scale 32ms
+        #     deviation = np.random.laplace(scale=32)
+        #     packets.loc[i, 'time'] += deviation
+        # packets = packets.sort_values('time')
+        # self.packets = packets.reset_index(drop=True)
+        ####################################################
 
         self.keystrokes = []
 
