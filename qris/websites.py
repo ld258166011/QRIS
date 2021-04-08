@@ -5,7 +5,6 @@ except:
     from .DFA import *
 
 SITE_FEATURES = {
-#    Website                Server Name           V    UH     SC     ST     AC      CT   CB
     'google':    {'base': ['www.google.com',      2,   False, True,  False, True,  'cp', 0,  0, range(0)], 'ss': range(173, 176), 'gs': True},
     'tmall':     {'base': ['suggest.taobao.com',  2,   False, True,  True,  True,  '',   10, 2, range(1, 4)]},
     'facebook':  {'base': ['www.facebook.com',    1.1, False, True,  False, False, '',   1,  1, range(5, 12)], 'cf': 2, 'fs': True},
@@ -497,7 +496,7 @@ class Website:
         Cookie size may change ONCE at the 3rd request in two different ways:
             * BDSVRTM Cookie is added when in a refreshed the webpage
             * BD_CK_SAM, PSINO, DelPer and BDSVRTM Cookies are added and
-              H_PS_PSSID Cookie size changes in a newly opened broswer
+              H_PS_PSSID Cookie size changes in a newly opened browser
         After the 3rd request, Cookie size may float occasionally due to:
             * H_PS_PSSID Cookie size may +/- 5 bytes
             * BDSVRTM Cookie size may +/- 1 byte

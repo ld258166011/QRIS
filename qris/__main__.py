@@ -16,7 +16,7 @@ def main():
     parser.add_argument('--bigrams', type=str, metavar='PATH', default=None,
                         help='filename of the bigram timing model (csv format).')
     parser.add_argument('--trident', dest='trident', action='store_true',
-                        help='broswer engine is Trident, including broswer IE and old version of Edge.')
+                        help='browser engine is Trident, including browser IE and old version of Edge.')
     parser.add_argument('--topk', type=int, metavar='K', default=10,
                         help='list the top K inferred queries.')
     parser.add_argument('--verbose', dest='verbose', action='store_true',
